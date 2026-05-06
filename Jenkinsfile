@@ -13,15 +13,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'No compilation needed for Python. Python version is:'
-                sh 'python3 --version'
+                bat '"C:\\msys64\\mingw64\\bin\\python.exe" --version'
             }
         }
 
         stage('Run Unit Tests') {
             steps {
                 echo 'Running unit tests:'
-                sh 'python3 -m pytest calculator_test.py -v'
-            }
+                bat '"C:\\msys64\\mingw64\\bin\\python.exe" -m unittest calculator_test.py -v'
+             }
         }
     }
 
